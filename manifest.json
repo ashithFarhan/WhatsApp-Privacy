@@ -1,0 +1,36 @@
+{
+    "name": "WhatsApp Privacy",
+    "description": "Keep prying eyes away from your chats!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      },
+      "content_scripts": [
+        {
+          "matches": ["https://*.whatsapp.com/*"],
+          "js": ["content.js"],
+          "css" : ["blr.css"],
+          "run_at": "document_end"
+        }
+      ],
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "host_permissions": [
+            "*://*/*"
+        ],
+    "action": {
+        "default_icon": {
+        "16": "/images/pm-logo16.png",
+        "32": "/images/pm-logo32.png",
+        "48": "/images/pm-logo48.png",
+        "128": "/images/pm-logo128.png"
+        }
+      },
+    "icons": {  
+        "16": "/images/pm-logo16.png",
+        "32": "/images/pm-logo32.png",
+        "48": "/images/pm-logo48.png",
+        "128": "/images/pm-logo128.png"
+      }
+
+  }
